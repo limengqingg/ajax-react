@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style type="text/css">
+           div{
+               background: blue;
+           }
+        </style>
+        <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+        <script type="text/javascript">
+          $(function(){
+              $("#btn1").click(function(){
+                  $("div").hide();
+              })
+              $("#btn2").click(function(){
+                  $("div").show();
+              })
+              $("#btn3").click(function(){
+                  $("select").empty();
+              })
+              $("#btn4").click(function(){
+                 $("select").remove();
+              })
+              $("#btn5").click(function(){
+                 $("span:last").append("我动态添加的span");
+              })
+              $("#btn6").click(function(){
+                alert($("span:first").html());
+              })
+              $("#btn7").click(function(){
+                $("span:last").html("设置span的内容");
+              })
+              $("#btn8").click(function(){
+                $("span").each( function( index, element ) { 
+                    alert("我是第"+index+"内容是："+element.innerHTML)
+                 } )
+              })
+
+              $("#btn9").click(function(){
+                  var json = {"name":"张三","age":"20"};
+               $.each(json, function( index, element ) { 
+                    alert("i是key="+index+"值是："+element);
+                 } )
+              })
+          })
+        </script>
+    </head>
+    <body>
+        <p>show和hide</p>
+        <div id="one">我是one</div>
+        <div id="two">我是第two</div>
+        <p>remove和empty</p>
+        <select>
+            <option>老虎</option>
+            <option>狮子</option>
+            <option>豹</option>
+        </select>
+        <br>
+        <select>
+            <option>大洋洲</option>
+            <option>欧洲</option>
+            <option>非洲</option>
+        </select>
+        <br>
+        <p>html</p>
+        <span>mysql是一个<b></b>数据库</span>
+        <span>使用jdbc访问数据库</span>
+        <p>功能按钮</p>
+        <input type="button" id="btn1" value="隐藏所有div"/><br/>
+        <input type="button" id="btn2" value="显示所有div"/><br/>
+        <input type="button" id="btn3" value="清除所有下拉列表中option子标签"/><br/>
+        <input type="button" id="btn4" value="删除所有下拉列表"/><br/>
+        <input type="button" id="btn5" value="添加元素"/><br/>
+        <input type="button" id="btn6" value="获取第一个span文本内容"/><br/>
+        <input type="button" id="btn7" value="设置span的内容"/><br/>
+        <input type="button" id="btn8" value="each循环"/><br/>
+        <input type="button" id="btn9" value="each循环json数组"/><br/>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style type="text/css">
+           div{
+               background: blue;
+           }
+        </style>
+        <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+        <script type="text/javascript">
+          $(function(){
+              $("#btn1").click(function(){
+                  var txt = $(":text").val();
+                  alert('我是多个text的第一个：'+ txt)
+              })
+              $("#btn2").click(function(){
+                  var txt = $(":text").val("王者荣耀");
+              })
+              $("#btn3").click(function(){
+                  var txt = $("div:first").text();
+                  alert('我是多个div的第一个：'+ txt)
+              })
+              $("#btn4").click(function(){
+                  var txt = $("div:last").text("div111");
+              })
+              $("#btn5").click(function(){
+                  alert($("img:first").attr("src"));
+              })
+              $("#btn6").click(function(){
+                $("img:last").attr("src","img/ex3.jpg");
+              })
+          })
+        </script>
+    </head>
+    <body>
+        <p>文本框val</p>
+        <input type="text" value="刘备"/><br>
+        <input type="text" value="关羽"/><br>
+        <input type="text" value="张飞"/><br>
+        <p>文本数据text</p>
+        <div>我是第一个div</div>
+        <div>我是第二个div</div>
+        <div>我是第三个div</div>
+        <p>图片</p>
+        <img id="img1" src="img/ex1.jpg">
+        <img id="img1" src="img/ex2.jpg">
+        <p>功能按钮</p>
+        <input type="button" id="btn1" value="获取第一个文本框的值"/><br/>
+        <input type="button" id="btn2" value="设置所有文本框为新值"/><br/>
+        <input type="button" id="btn3" value="获取div的所有文本"/><br/>
+        <input type="button" id="btn4" value="获取第一个div的文本"/><br/>
+        <input type="button" id="btn5" value="设置div新文本"/><br/>
+        <input type="button" id="btn6" value="设置img图片"/><br/>
+    </body>
+</html>

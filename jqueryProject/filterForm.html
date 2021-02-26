@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            div{
+                background: #808080;
+                width: 200px;
+                height: 80px;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+        <script type="text/javascript">
+           $(function(){
+            $("#btn1").on("click",function(){
+              $(":text:enabled").val("hello")
+            })
+            $("#btn2").on("click",function(){
+              var obj = $(":checkbox:checked");
+              obj.each(function(i,n){
+                  alert("第"+i+"个成员,DOM值是:"+n.value+"jquery对象取值："+$(n).val())
+              })
+            })
+
+            $("#btn3").on("click",function(){
+              var obj = $("select > option:selected");
+             alert(obj.val()+"    "+obj.text())
+            })
+        })
+        
+        </script>
+    </head>
+    <body>
+      <p>文本框</p>
+      <input type="text" id="text1" value="text1"/><br>
+      <input type="text" id="text2" value="text2" disabled/><br>
+      <input type="text" id="text3" value="text2"/><br>
+      <input type="text" id="text4" value="text3" disabled/><br>
+      <br>
+      <p>复选框</p>
+      <input type="checkbox"  value="足球" />足球<br>
+      <input type="checkbox"  value="健身" />健身<br>
+      <input type="checkbox"  value="电子游戏" checked/>电子游戏<br>
+      <input type="checkbox"  value="篮球"/>足球<br>
+      <br>
+      <p>下拉框</p>
+      <select id="lang">
+          <option value="java">java语言</option>
+          <option value="go" selected>go语言</option>
+          <option value="sql">sql语言</option>
+      </select>
+      <p>功能按钮</p>
+      <button id="btn1">所有可用的text设值hello</button><br>
+      <button id="btn2">显示被选中的复选框的值</button><br>
+      <button id="btn3">显示下拉列表选中的值</button><br>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            div{
+                background: #808080;
+                width: 200px;
+                height: 80px;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+        <script type="text/javascript">
+           $(function(){
+            $("#btn1").on("click",function(){
+            $("#mydiv").append(
+                "<button id='mybutton'>我是动态添加button</button>"
+            )
+
+            $("#mybutton").click(function(){
+                alert("新添加的按钮被点击了")
+            })
+
+            $("p").on("click",{name:"张三"},function(event){
+                //event.data 获取传入的参数  event是自定义名称
+                alert(event.data.name)
+
+            })
+        })
+           })
+        
+        </script>
+    </head>
+    <body>
+      <p>功能按钮</p>
+      <button id="btn1">动态添加button</button>
+      <br><br>
+      <div id="mydiv"></div>
+      <p>可以click me</p>
+    </body>
+</html>

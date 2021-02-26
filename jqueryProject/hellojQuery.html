@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+        <script type="text/javascript">
+        /*
+          1. $(document), $是jQuery中的函数名称，document是函数的参数
+             作用是document对象变成jQuery函数库可以使用的对象
+          2.ready:是jQuery中的函数，是准备的意思，当页面的dom对象加载成功后
+                会执行ready函数的内容。ready相当于js中的onLoad事件
+          3. function()自定义的表示onLoad后要执行的功能。
+        */
+        //    $(document).ready(function(){
+        //        alert("hello jQuery")
+        //    })
+           //简写
+           $(function(){
+            alert("hello jQuery")
+           })
+        </script>
+    </head>
+    <body>
+        <input type="text" id="txt1" value="我是txt1"/><br/>
+        <input type="text" id="txt2" value="我是txt2"/><br/>
+        <input type="button"  value="单击按钮1" onclick="fun1()"/><br/>
+        <input type="button"  value="单击按钮2" onclick="fun2()"/><br/>
+    </body>
+</html>
